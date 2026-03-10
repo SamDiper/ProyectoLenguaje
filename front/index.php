@@ -53,6 +53,16 @@ $result = $stmt->get_result();
                                 name="producto_id"
                                 value="<?php echo $p['id']; ?>"
                             >
+                            
+                            <input
+                                type="number"
+                                name="cantidad"
+                                value="1"
+                                min="1"
+                                max="<?php echo $p['stock']; ?>"
+                                class="w-full mb-4 px-3 py-2 border rounded-lg"
+                                required
+                            >
 
                             <button
                                 type="submit"
