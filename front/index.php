@@ -25,7 +25,11 @@ $result = $stmt->get_result();
     <h2 class="text-3xl font-bold mb-8 text-center">
         Productos de la Canasta Familiar
     </h2>
-
+    <?php if (isset($_GET['msg'])) { ?>
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            <?php echo $_GET['msg']; ?>
+        </div>
+    <?php } ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
         <?php while ($p = $result->fetch_assoc()) { ?>
@@ -94,7 +98,7 @@ $result = $stmt->get_result();
                         >
                             <?php echo $p['stock'] == 0 ? "Agotado" : "Comprar"; ?>
                         </button>
-
+                       
                     </form>
 
                 <?php } else { ?>
