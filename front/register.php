@@ -17,6 +17,11 @@ if(isset($_SESSION['user_id'])){
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6 text-center">Registro</h2>
+        <?php if (isset($_GET['error'])) { ?>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <?php echo $_GET['error']; ?>
+            </div>
+        <?php } ?>
         <form action="../back/register.php" method="POST">
             <div class="mb-4">
                 <label class="block text-gray-700">Nombre</label>
@@ -29,6 +34,18 @@ if(isset($_SESSION['user_id'])){
             <div class="mb-6">
                 <label class="block text-gray-700">Contraseña</label>
                 <input type="password" name="password" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700">Confirmar Contraseña</label>
+                <input type="password" name="confirm_password" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700">Rol</label>
+                <select name="rol" class="w-full px-3 py-2 border rounded-lg" required>
+                    <option value="">Selecciona un rol</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Cliente</option>
+                </select>
             </div>
             <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">Registrarse</button>
         </form>
