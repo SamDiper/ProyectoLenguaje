@@ -3,9 +3,18 @@ include("../bd/conexion.php");
 
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
-$password = password_hash($_POST['password']);
+$password = $_POST['password'];
+$confirm_password = $_POST['confirm_password'];
 
-$rol = 1;
+if($password !== $confirm_password){
+    header("Location: ../front/register.php?error=Las contraseñas no coinciden");
+    exit();
+}
+else{
+   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+}
+
+$rol = $_POST['rol'];
 
 $sql = "INSERT INTO usuarios(nombre,email,password,rol_id)
         VALUES(?,?,?,?)";

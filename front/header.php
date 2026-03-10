@@ -1,7 +1,7 @@
 <?php
 include("../bd/conexion.php");
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <header class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -13,9 +13,13 @@ include("../bd/conexion.php");
 
             <?php if (isset($_SESSION['user_id'])) { ?>
 
-                <span class="text-gray-700">
-                    Hola, <?php echo $_SESSION['nombre']; ?>
-                </span>
+                <div class="flex items-center gap-2 bg-gray-100 px-3 py-1.5 rounded-full">
+                    <i class="fa-solid fa-user text-gray-600"></i>
+                    
+                    <span class="text-gray-700 text-sm font-medium">
+                        Hola, <?php echo $_SESSION['nombre']; ?>
+                    </span>
+                </div>
 
                 <?php if ($_SESSION['rol'] == 1) { ?>
                     <a href="adminPanel.php" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">

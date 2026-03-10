@@ -43,6 +43,11 @@ if(!$producto){
                 <label class="block text-gray-700">Stock</label>
                 <input type="number" name="stock" value="<?php echo $producto['stock']; ?>" class="w-full px-3 py-2 border rounded-lg" required>
             </div>
+            <div class="mb-6">
+                <label class="block text-gray-700">Imagen</label>
+                <input type="text" name="imagen" value="<?php echo $producto['imagen']; ?>" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+
             <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Actualizar</button>
         </form>
         <a href="adminPanel.php" class="mt-4 block text-center text-blue-600">Volver</a>
