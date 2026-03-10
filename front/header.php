@@ -25,6 +25,9 @@ include("../bd/conexion.php");
                     <a href="adminPanel.php" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
                         Panel Admin
                     </a>
+                    <a href="historialVentas.php" class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700">
+                        Historial de Ventas
+                    </a>
                 <?php } ?>
 
                 <a href="../back/logout.php" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
