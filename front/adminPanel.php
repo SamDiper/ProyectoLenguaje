@@ -31,6 +31,8 @@ $result = $stmt->get_result();
                     <input type="text" name="nombre" placeholder="Nombre" class="px-3 py-2 border rounded-lg" required>
                     <input type="number" step="0.01" name="precio" placeholder="Precio" class="px-3 py-2 border rounded-lg" required>
                     <input type="number" name="stock" placeholder="Stock" class="px-3 py-2 border rounded-lg" required>
+                    <input type="text" name="imagen" placeholder="URL de la imagen" class="px-3 py-2 border rounded-lg" required>
+
                 </div>
                 <button type="submit" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Agregar</button>
             </form>
@@ -41,6 +43,7 @@ $result = $stmt->get_result();
             <table class="w-full table-auto">
                 <thead>
                     <tr class="bg-gray-200">
+                        <th class="px-4 py-2">Imagen</th>
                         <th class="px-4 py-2">ID</th>
                         <th class="px-4 py-2">Nombre</th>
                         <th class="px-4 py-2">Precio</th>
@@ -51,6 +54,7 @@ $result = $stmt->get_result();
                 <tbody>
                     <?php while($p = $result->fetch_assoc()) { ?>
                     <tr>
+                        <td class="border px-4 py-2 flex justify-center"><img src="<?php echo $p['imagen']; ?>" alt="<?php echo $p['nombre']; ?>" class="w-16 h-16 object-cover rounded"></td>
                         <td class="border px-4 py-2"><?php echo $p['id']; ?></td>
                         <td class="border px-4 py-2"><?php echo $p['nombre']; ?></td>
                         <td class="border px-4 py-2">$<?php echo number_format($p['precio'],2); ?></td>
